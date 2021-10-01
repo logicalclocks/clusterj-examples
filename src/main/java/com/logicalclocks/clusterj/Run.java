@@ -33,11 +33,23 @@
  * DAMAGES OR  OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.logicalclocks.clusterj.examples;
+package com.logicalclocks.clusterj;
 
-import com.mysql.clusterj.SessionFactory;
+import com.logicalclocks.clusterj.examples.ClusterJExample;
 
-public interface ClusterJExample {
-  void init(SessionFactory sessionFactory);
-  void execute() throws Exception;
+import java.lang.reflect.Constructor;
+
+public class Run {
+  public static void main(String... argv) throws Exception {
+    if (argv.length < 1) {
+      System.err.println("Usage: com.logicalclocks.clusterj.Main EXAMPLE_CLASS");
+      System.exit(1);
+    }
+    Class<ClusterJExample> clazz = (Class<ClusterJExample>) Class.forName(argv[0]);
+    Constructor<ClusterJExample> constructor = clazz.getConstructor();
+    ClusterJExample example = constructor.newInstance();
+    com.mysql.clusterj.SessionFactory sessionFactory = SessionFactory.getInstance();
+    example.init(sessionFactory);
+    example.execute();
+  }
 }
