@@ -93,9 +93,8 @@ There are several examples you can run which show the basic functionality of Clu
  9. `QueryCustomer`: A more complex range scan on customer table
  10. `QueryOrderStatus`:  A more complex query on order_status table
  
- To run any of the above examples use the provided runner and replace the class name: `java -cp target/rondb-clusterj
- -1.0-SNAPSHOT-jar-with
- -dependencies.jar com.logicalclocks.clusterj.Run com.logicalclocks.clusterj.examples.EXAMPLE_CLASS_NAME`
+ To run any of the above examples use the provided runner and replace the class name:
+ `java -cp target/rondb-clusterj-1.0-SNAPSHOT-jar-with-dependencies.jar com.logicalclocks.clusterj.Run com.logicalclocks.clusterj.examples.EXAMPLE_CLASS_NAME`
  
 ## Next steps
 As the name suggests this is just example use cases. There are many configuration parameters to
