@@ -13,12 +13,12 @@ You need to have Java runtime installed
 This is a Maven project so you need to install Maven to build it
 
 ### Native RonDB API
-ClusterJ is Java client which internally is using JNI to make calls to the native C++ RonDB library. The library is
- need at **runtime**. Follow the steps below to correctly install the library.
+ClusterJ is a Java client which is internally using JNI to make calls to the native C++ RonDB library. The library is
+ needed at **runtime**. Follow the steps below to correctly install the library.
  
  1. Download the native library tarball from [here](https://repo.hops.works/master/lib-ndb-6.1.0.tgz)
  2. Extract the tarball
- 3. Copy the contents to your Linux distribution default library path, usually `/usr/lib` Otherwise when you run the
+ 3. Copy the content to your Linux distribution default library path, usually `/usr/lib` Otherwise when you run the
   examples you should override the library path using `-Djava.library.path=PATH_TO_LIBRARY` 
 
 ### ClusterJ
@@ -29,10 +29,11 @@ To use ClusterJ from your application you need to include the ClusterJ jar in yo
   `pom.xml` of the current project for details.
 
 ### RonDB cluster
-In order to run the examples in this repository you need an existing RonDB cluster. Use [hopsworks.ai](https://www.hopsworks.ai)
+In order to run the examples in this repository you'll need an existing RonDB cluster. Use [hopsworks.ai](https://www
+.hopsworks.ai)
 to create a Hopsworks cluster or follow the instructions [here](https://docs.rondb.com/cloud_script) to install RonDB.
 
-As mentioned earlier, ClusterJ uses the native RonDB API so you application **must** be able to reach RonDB
+As mentioned earlier, ClusterJ uses the native RonDB API so your application **must** be able to reach RonDB
  Management node and RonDB datanodes. Make sure the following ports are open to your firewall/security group.
  
  1. RonDB management port: 1186

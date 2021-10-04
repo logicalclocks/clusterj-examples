@@ -47,7 +47,7 @@ import java.util.Properties;
 
 public class SessionFactory {
 
-  private static com.mysql.clusterj.SessionFactory rondbSessionFactory;
+  private static volatile com.mysql.clusterj.SessionFactory rondbSessionFactory;
 
   private SessionFactory() {}
 
